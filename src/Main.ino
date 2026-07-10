@@ -1,12 +1,12 @@
-#define YAW_FORWARD_PIN 13
-#define YAW_BACKWARD_PIN 14
-#define PITCH_FORWARD_PIN 12
-#define PITCH_BACKWARD_PIN 11
+#define YAW_FORWARD_PIN 3
+#define YAW_BACKWARD_PIN 4
+#define PITCH_FORWARD_PIN 18
+#define PITCH_BACKWARD_PIN 17
 
-#define YAW_PLUS_PIN 10
-#define YAW_MINUS_PIN 9
-#define PITCH_PLUS_PIN 8
-#define PITCH_MINUS_PIN 7
+#define YAW_PLUS_PIN 7
+#define YAW_MINUS_PIN 10
+#define PITCH_PLUS_PIN 14
+#define PITCH_MINUS_PIN 11
 
 long yawTime;
 long pitchTime;
