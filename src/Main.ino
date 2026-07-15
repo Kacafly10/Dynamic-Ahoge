@@ -25,26 +25,79 @@ void setup() {
 }
 
 void loop() {
-    if (digitalRead(YAW_PLUS_PIN) == HIGH) {
-        moveYawForward();
-    }
-    else if (digitalRead(YAW_MINUS_PIN) == HIGH) {
-        moveYawBackward();
-    }
+//Yaw Plus-------------------------------
+if (digitalRead(YAW_PLUS_PIN) == HIGH) {
+        unsigned long press = millis()
+        while (digitalRead(YAW_PLUS_PIN) == HIGH) {
 
-    if (digitalRead(PITCH_PLUS_PIN) == HIGH) {
-        movePitchForward();
-    }
-    else if (digitalRead(PITCH_MINUS_PIN) == HIGH) {
-        movePitchBackward();
-    }
+        }
 
-    else {
-        digitalWrite(YAW_FORWARD_PIN, LOW);
-        digitalWrite(YAW_BACKWARD_PIN, LOW);
-        digitalWrite(PITCH_FORWARD_PIN, LOW);
-        digitalWrite(PITCH_BACKWARD_PIN, LOW);
+        press = millis() - press
+        if (press < 500){
+            pose1();
+        }
+        else {
+            while (digitalRead(YAW_PLUS_PIN) == HIGH)
+            {
+            moveYawForward();
+            }
+        }
     }
+//Yaw Minus-------------------------------
+if (digitalRead(YAW_MINUS_PIN) == HIGH) {
+        unsigned long press = millis()
+        while (digitalRead(YAW_MINUS_PIN) == HIGH) {
+
+        }
+
+        press = millis() - press
+        if (press < 500){
+            pose2();
+        }
+        else {
+            while (digitalRead(YAW_MINUS_PIN) == HIGH)
+            {
+            }
+        }
+    }
+//Pitch Plus-------------------------------
+if (digitalRead(PITCH_PLUS_PIN) == HIGH) {
+        unsigned long press = millis()
+        while (digitalRead(PITCH_PLUS_PIN) == HIGH) {
+
+        }
+
+        press = millis() - press
+        if (press < 500){
+            pose1();
+        }
+        else {
+            movePitchForward();
+            while (digitalRead(PITCH_PLUS_PIN) == HIGH)
+            {
+            }
+            digitalWrite(PITCH_FORWARD_PIN, LOW);
+        }
+    }
+//Pitch Minus-------------------------------
+if (digitalRead(PITCH_MINUS_PIN) == HIGH) {
+        unsigned long press = millis()
+        while (digitalRead(PITCH_MINUS_PIN) == HIGH) {
+
+        }
+
+        press = millis() - press
+        if (press < 500){
+            pose1();
+        }
+        else {
+            movePitchBackward();
+            while (digitalRead(PITCH_MINUS_PIN) == HIGH) {
+            }
+            digitalWrite(PITCH_BACKWARD_PIN, LOW);
+        }
+    }
+//Yaw Minus-------------------------------
 }
 
 void moveYawForward() {

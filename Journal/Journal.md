@@ -1,0 +1,20 @@
+---
+title: "Dynamic Ahoge"
+author: "Kacafly"
+description: "Expression atop your top."
+created_at: "2026-06-29"
+---
+
+# Day 1 (June 29): Idea
+
+So, Ahoge. There are as many types as there are... something with lots of variations. The most prominent type of ahoge is a simple lick sticking out. It may look simple (and it is) without any mechanisms, They can be tricky to manipulate to their full potential(3 joint Pitch, Yaw, etc). A simpler style for mechanisms is a Triangle or "dorito" Ahoge has more easily 2 Motions; 1 Pitch & 1 Yaw. That is what i chose.
+
+I've now got a base of 2 DOF, How can i move it? I can use 1 Motor and a spinning platform with another, a differential System for 2 motors max Torque, arms maybe? Up to now I used the first mechanism for it's simplicity, but still thought a pulley system for pitch would be easier to implement torque wise
+
+# Day 16 (July 14): Mechanism
+
+Gear systems and power aren't clear yet, torque is still getting tackled, Size of gears is yet to be thought.
+
+First thought about the motors was to use the same for all 2 systems, but as the needs of each system was different. Yaw needed less power but a smaller motor, Pitch needed stronger torque but a larger motor is ok. The mounts and placement of motors is fixed for the moment. After getting feedback and/or considering, gears could be substituted for o rings and tpu wheels or a like.
+
+# Day 17 (July 15): Pit
