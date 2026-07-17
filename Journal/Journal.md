@@ -11,11 +11,19 @@ So, Ahoge. There are as many types as there are... something with lots of variat
 
 I've now got a base of 2 DOF, How can i move it? I can use 1 Motor and a spinning platform with another, a differential System for 2 motors max Torque, arms maybe? Up to now I used the first mechanism for it's simplicity, but still thought a pulley system for pitch would be easier to implement torque wise
 
+# Days 2-15: All Other
+
+Done undocumented design and coding.
+
+### Time: ~10 Hours
+
 # Day 16 (July 14): Mechanism
 
 Gear systems and power aren't clear yet, torque is still getting tackled, Size of gears is yet to be thought.
 
 First thought about the motors was to use the same for all 2 systems, but as the needs of each system was different. Yaw needed less power but a smaller motor, Pitch needed stronger torque but a larger motor is ok. The mounts and placement of motors is fixed for the moment. After getting feedback and/or considering, gears could be substituted for o rings and tpu wheels or a like.
+
+### Time: ~<1 Hour
 
 # Day 17 (July 15): Pitch and... Fahhh!:
 
@@ -32,7 +40,11 @@ What I got done:
 ![Fial](./final-j15.png)
 - Final design v1
 
-### Tim: ~2 ours
+### Time: ~2 Hours
 
-# Day 18: Polis
-Last day i op of tis projt
+# Day 18: Polish
+Last day in this project. Finish all in README.
+
+~Thank you for the ride Fictional Netizen.~
+
+### Time: ~1 Hour 25 Minutes
