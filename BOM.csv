@@ -1,12 +1,16 @@
 Name,Qty,Unit,Price,Link
 1mm Carbon Plate, 1,Pcs@50x100x1mm,Rp. 23000,Rp. 23000,https://www.tokopedia.com/fxsm/elektroda-plat-karbon-graphite-plate-electrode-100-x-50-x-1-10-mm-tebal-1mm-cd45b
-0610 Coreless Motor DC,2,Pcs,Rp. 15000,Rp. 30000, https://www.tokopedia.com/aidaa4817/new-dinamo-motor-610-dc-3-7v-brushless
-RP2040-Zero,1,Pcs,Rp. 40000,Rp. 40000, https://tk.tokopedia.com/ZSX282N8M/
-BS170 Transistor,2,Pcs,Rp. 3000,Rp. 3000, https://tk.tokopedia.com/ZSX2R31SR/
-Wire,1,m,Rp. 5000,Rp. 5000,
-Spring,2,Pcs,$3,$6,
-Plate Print,1,Pcs,,,
-Dorito Print,1,Pcs,,,
-Box Print,1,Pcs,,,
-Bracket Print,1,Pcs,,,
-Gear Print,2,Pcs,,,
+0610 Coreless DC Motor,1,Pcs,Rp. 15000,Rp. 30000,https://www.tokopedia.com/aidaa4817/new-dinamo-motor-610-dc-3-7v-brushless
+0410 Coreless DC Motor,1,Pcs,
+RP2040-Zero,1,Pcs,Rp. 40000,Rp. 40000 https://tk.tokopedia.com/ZSX282N8M/
+BS170 Transistor,2,Pcs,Rp. 3000,Rp. 6000,https://tk.tokopedia.com/ZSX2R31SR/
+30 AWG Wire,3,m,Rp. 798,Rp. 2394,https://shopee.co.id/Kabel-AWG30-Silver-Tinned-Cu-Per-Meter-30AWG-Cable-AWG-30-AWG-Per-M
+Momentary SPDT Switch,2,Pcs,Rp. 3500,Rp. 7000,https://shopee.co.id/product/1098736195/46003563448
+Spring,2,Pcs,$3.27,$6.54,https://www.thespringstore.com/pc007-057-6000-mw-0130-c-n-in.html?um=me
+Plate Print,1,Pcs,$6.86,$6.86,https://jlc3dp.com/3d-printing-quote
+Dorito Print,1,Pcs,$6.86,$6.86,https://jlc3dp.com/3d-printing-quote
+Box Print,1,Pcs,$6.86,$6.86,https://jlc3dp.com/3d-printing-quote
+Bracket Print,1,Pcs,$0.31,$0.31,https://jlc3dp.com/3d-printing-quote
+Rail Print,1,Pcs,$0.31,$0.31,https://jlc3dp.com/3d-printing-quote
+Yaw Gear Print,1,Pcs,$0.31,$0.31,https://jlc3dp.com/3d-printing-quote
+Pitch Wheel Print,1,Pcs,$0.31,$0.31,

@@ -17,4 +17,22 @@ Gear systems and power aren't clear yet, torque is still getting tackled, Size o
 
 First thought about the motors was to use the same for all 2 systems, but as the needs of each system was different. Yaw needed less power but a smaller motor, Pitch needed stronger torque but a larger motor is ok. The mounts and placement of motors is fixed for the moment. After getting feedback and/or considering, gears could be substituted for o rings and tpu wheels or a like.
 
-# Day 17 (July 15): Pit
+# Day 17 (July 15): Pitch and... Fahhh!:
+
+I realised i need to Timelapse my CAD. I Have 8+ hours of undocumented CAD. And only 2.5 Hours of Text! I'm so disappointed. today i'll probably not get much, i'm just so... idk.
+
+What I got done:
+
+![Drive](./drive-j15.png)
+- I made the changes to the drive system. using a 0.65:4.35 ratio on tpu wheels.
+
+![Box](./box-j15.png)
+- Usd slot instead of legs for more MOSFET space. it was off .5mm at t start.
+
+![Fial](./final-j15.png)
+- Final design v1
+
+### Tim: ~2 ours
+
+# Day 18: Polis
+Last day i op of tis projt
