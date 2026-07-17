@@ -20,7 +20,7 @@ Learn More: [Journal](/Journal/Journal.md)
 ## Reason
 Ahoge are fun. The thing is, current ahoge technology is static, where in anime, ahoge react to moving, emotion, other people, _force majeure_ etc. The scene of deku getting shocked and showing his ahoge's bones is the first spark, and this particular design by nijika.
 
-##Software
+## Software
 Using Arduino IDE for the rp2040 Platform.
 
     Feature:
