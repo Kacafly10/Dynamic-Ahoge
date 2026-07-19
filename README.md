@@ -53,9 +53,41 @@ Per part in [CAD](/cad/)
 |Rail Print            |1  |Pcs           |$0.31         |$0.31                                        |https://jlc3dp.com/3d-printing-quote                                                                            |
 |Yaw Gear Print        |1  |Pcs           |$0.31         |$0.31                                        |https://jlc3dp.com/3d-printing-quote                                                                            |
 |Pitch Wheel Print     |1  |Pcs           |$0.31         |$0.31                                        |https://jlc3dp.com/3d-printing-quote                                                                            |
-                                                                         |
 
 BOM: [BOM](./BOM.csv)
+
+## Assembly
+_.
+
+1. Prepare parts (see [BOM](#bom))
+
+A.
+
+2. assemble & slip in dorito 
+2. Slot TPU attachment & assemble motor onto Turntable
+3. Assemble Rail to turntable
+
+B. 
+
+4. Fix motor onto box.
+5. snip MOSFET legs to fit.
+6. adhese MOSFETS to box.
+
+C. 
+
+7. fit springs in bracket
+8. carve graphite into brushes according to [Brus](./cad/Brush.step)
+9. wrap wire around brush
+10. place carbon brushes on springs
+
+Final.
+
+11. Place turntable on box
+12. slot & adhese gear on shaft
+13. wire all electronic parts according to [smatis](#schematics)
+14. make sure wires stay clear of moving parts
+15. adhese remaining parts.
+
 
 ## AI Use
 AI use in this project is for the purpose of research and ideation to speed up the development process. All work on the final product & design is all my intention.
