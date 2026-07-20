@@ -11,7 +11,7 @@
 long yawTime;
 long pitchTime;
 // Time based tracking for yaw and pitch movements to eliminate the need for servo or encoder. Precision is ....
-
+// before testing, time is represented as desired angle relative to first position (straight up)
 void setup() {
     pinMode(YAW_FORWARD_PIN, OUTPUT);
     pinMode(YAW_BACKWARD_PIN, OUTPUT);
@@ -22,6 +22,124 @@ void setup() {
     pinMode(YAW_MINUS_PIN, INPUT);
     pinMode(PITCH_PLUS_PIN, INPUT);
     pinMode(PITCH_MINUS_PIN, INPUT);
+}
+
+void moveYawForward(unsigned long time = 0) {
+    if (time == 0) {
+        static unsigned long start = millis();
+        digitalWrite(YAW_FORWARD_PIN, HIGH);
+        digitalWrite(YAW_BACKWARD_PIN, LOW);
+        return;
+    }
+    else if (time == 4294967295) {
+        yawTime = yawTime + (millis() - start);
+    }
+    else {
+    static unsigned long start = millis();
+    digitalWrite(YAW_FORWARD_PIN, HIGH);
+    digitalWrite(YAW_BACKWARD_PIN, LOW);
+    delay(time);
+    yawTime = yawTime + (millis() - start);
+    digitalWrite(YAW_FORWARD_PIN, LOW); }
+}
+
+void moveYawBackward(unsigned long time = 0) {
+    if (time == 0) {
+        static unsigned long start = millis();
+        digitalWrite(YAW_FORWARD_PIN, LOW);
+        digitalWrite(YAW_BACKWARD_PIN, HIGH);
+        return;
+    }
+    else if (time == 4294967295) {
+        yawTime = yawTime - (millis() - start);
+    }
+    else {
+    static unsigned long start = millis();
+    digitalWrite(YAW_FORWARD_PIN, LOW);
+    digitalWrite(YAW_BACKWARD_PIN, HIGH);
+    yawTime = yawTime - (millis() - start);
+    delay(time);
+    digitalWrite(YAW_BACKWARD_PIN, LOW);
+    }
+}
+}
+
+void movePitchForward(unsigned long time = 0) {
+    if (time == 0) {
+        static unsigned long start = millis();
+        digitalWrite(PITCH_FORWARD_PIN, HIGH);
+        digitalWrite(PITCH_BACKWARD_PIN, LOW);
+        return;
+    }
+    else if (time == 4294967295) {
+        pitchTime = pitchTime + (millis() - start);
+    }
+    else {
+        static unsigned long start = millis();
+        digitalWrite(PITCH_FORWARD_PIN, HIGH);
+        digitalWrite(PITCH_BACKWARD_PIN, LOW);
+        pitchTime = pitchTime + (millis() - start);
+        delay(time);
+        digitalWrite(PITCH_FORWARD_PIN, LOW);
+    }
+}
+
+void movePitchBackward(unsigned long time = 0) {
+    if (time == 0) {
+        static unsigned long start = millis();
+        digitalWrite(PITCH_FORWARD_PIN, LOW);
+        digitalWrite(PITCH_BACKWARD_PIN, HIGH);
+        return;
+    }
+    else if (time == 4294967295) {
+        pitchTime = pitchTime - (millis() - start);
+    }
+    else {
+    static unsigned long start = millis();
+    digitalWrite(PITCH_FORWARD_PIN, LOW);
+    digitalWrite(PITCH_BACKWARD_PIN, HIGH);
+    pitchTime = pitchTime - (millis() - start);
+    delay(time);
+    digitalWrite(PITCH_BACKWARD_PIN, LOW); }
+}
+
+// Poses fully implemented only after testing
+
+void pose1() {
+    // 0 degrees yaw, 0 degrees pitch (at least in theory)
+    if (yawTime < 0) {
+        moveYawForward(yawTime * -1);
+    }
+    else if (yawTime > 0) {
+        moveYawBackward(yawTime);
+    }
+    else {
+        // at 0
+    }
+
+    if (pitchTime < 0) {
+        movePitchForward(pitchTime * -1);
+    }
+    else if (pitchTime > 0) {
+        movePitchBackward(pitchTime);
+    }
+    else {
+        // at 0
+    }
+}
+
+void pose2() {
+    // Quick rise (90 to be tested)
+    movePitchForward(90 - pitchTime);
+    movePitchBackward(90);
+}
+
+void pose3() {
+    // Implement the specific pose 3
+}
+
+void pose4() {
+    // Implement the specific pose 4
 }
 
 void loop() {
@@ -37,10 +155,11 @@ if (digitalRead(YAW_PLUS_PIN) == HIGH) {
             pose1();
         }
         else {
+            moveYawForward();
             while (digitalRead(YAW_PLUS_PIN) == HIGH)
             {
-            moveYawForward();
             }
+            moveYawForward(4294967295);
         }
     }
 
@@ -56,9 +175,11 @@ if (digitalRead(YAW_MINUS_PIN) == HIGH) {
             pose2();
         }
         else {
+            moveYawBackward();
             while (digitalRead(YAW_MINUS_PIN) == HIGH)
             {
             }
+            moveYawBackward(4294967295);
         }
     }
 
@@ -78,7 +199,7 @@ if (digitalRead(PITCH_PLUS_PIN) == HIGH) {
             while (digitalRead(PITCH_PLUS_PIN) == HIGH)
             {
             }
-            digitalWrite(PITCH_FORWARD_PIN, LOW);
+            movePitchForward(4294967295);
         }
     }
 
@@ -102,48 +223,3 @@ if (digitalRead(PITCH_MINUS_PIN) == HIGH) {
     }
 }
 
-void moveYawForward() {
-    unsigned long start = millis();
-    digitalWrite(YAW_FORWARD_PIN, HIGH);
-    digitalWrite(YAW_BACKWARD_PIN, LOW);
-    yawTime = yawTime + (millis() - start);
-}
-
-void moveYawBackward() {
-    unsigned long start = millis();
-    digitalWrite(YAW_FORWARD_PIN, LOW);
-    digitalWrite(YAW_BACKWARD_PIN, HIGH);
-    yawTime = yawTime - (millis() - start);
-}
-
-void movePitchForward() {
-    unsigned long start = millis();
-    digitalWrite(PITCH_FORWARD_PIN, HIGH);
-    digitalWrite(PITCH_BACKWARD_PIN, LOW);
-    pitchTime = pitchTime + (millis() - start);
-}
-
-void movePitchBackward() {
-    unsigned long start = millis();
-    digitalWrite(PITCH_FORWARD_PIN, LOW);
-    digitalWrite(PITCH_BACKWARD_PIN, HIGH);
-    pitchTime = pitchTime - (millis() - start);
-}
-
-// Poses implemented after testing
-
-void pose1() {
-    // Implement the specific pose 1
-}
-
-void pose2() {
-    // Implement the specific pose 2
-}
-
-void pose3() {
-    // Implement the specific pose 3
-}
-
-void pose4() {
-    // Implement the specific pose 4
-}
