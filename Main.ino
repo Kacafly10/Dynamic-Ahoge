@@ -27,12 +27,12 @@ void setup() {
 void loop() {
 //Yaw Plus-------------------------------
 if (digitalRead(YAW_PLUS_PIN) == HIGH) {
-        unsigned long press = millis()
+        unsigned long press = millis();
         while (digitalRead(YAW_PLUS_PIN) == HIGH) {
 
         }
 
-        press = millis() - press
+        press = millis() - press;
         if (press < 500){
             pose1();
         }
@@ -43,14 +43,15 @@ if (digitalRead(YAW_PLUS_PIN) == HIGH) {
             }
         }
     }
+
 //Yaw Minus-------------------------------
 if (digitalRead(YAW_MINUS_PIN) == HIGH) {
-        unsigned long press = millis()
+        unsigned long press = millis();
         while (digitalRead(YAW_MINUS_PIN) == HIGH) {
 
         }
 
-        press = millis() - press
+        press = millis() - press;
         if (press < 500){
             pose2();
         }
@@ -60,16 +61,17 @@ if (digitalRead(YAW_MINUS_PIN) == HIGH) {
             }
         }
     }
+
 //Pitch Plus-------------------------------
 if (digitalRead(PITCH_PLUS_PIN) == HIGH) {
-        unsigned long press = millis()
+        unsigned long press = millis();
         while (digitalRead(PITCH_PLUS_PIN) == HIGH) {
 
         }
 
-        press = millis() - press
+        press = millis() - press;
         if (press < 500){
-            pose1();
+            pose3();
         }
         else {
             movePitchForward();
@@ -79,16 +81,17 @@ if (digitalRead(PITCH_PLUS_PIN) == HIGH) {
             digitalWrite(PITCH_FORWARD_PIN, LOW);
         }
     }
+
 //Pitch Minus-------------------------------
 if (digitalRead(PITCH_MINUS_PIN) == HIGH) {
-        unsigned long press = millis()
+        unsigned long press = millis();
         while (digitalRead(PITCH_MINUS_PIN) == HIGH) {
 
         }
 
-        press = millis() - press
+        press = millis() - press;
         if (press < 500){
-            pose1();
+            pose4();
         }
         else {
             movePitchBackward();
@@ -97,7 +100,6 @@ if (digitalRead(PITCH_MINUS_PIN) == HIGH) {
             digitalWrite(PITCH_BACKWARD_PIN, LOW);
         }
     }
-//Yaw Minus-------------------------------
 }
 
 void moveYawForward() {
@@ -126,4 +128,22 @@ void movePitchBackward() {
     digitalWrite(PITCH_FORWARD_PIN, LOW);
     digitalWrite(PITCH_BACKWARD_PIN, HIGH);
     pitchTime = pitchTime - (millis() - start);
+}
+
+// Poses implemented after testing
+
+void pose1() {
+    // Implement the specific pose 1
+}
+
+void pose2() {
+    // Implement the specific pose 2
+}
+
+void pose3() {
+    // Implement the specific pose 3
+}
+
+void pose4() {
+    // Implement the specific pose 4
 }
